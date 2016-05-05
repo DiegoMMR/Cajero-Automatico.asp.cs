@@ -4,14 +4,15 @@
 	<meta charset="utf-8" />
 	<title>Cajero Automatico</title>
 
-<!--Este es el estiro de la pagina-->
+<!--Este es el estilo de la pagina-->
 	<style type="text/css">
 	body
 	{
 		background: black;
+		text-align: center;
 		color: black;
 		font: 150% arial;
-		text-align: center;
+		
 	}	
 	</style>
 	
@@ -26,25 +27,20 @@
 
 
 		<!--en este div se le pone la posicion para que este quede sobre el fondo -->
-		<div id="menu" style="position:absolute; top:36px; left:381px; visibility:visible z-index:1">
+		<div id="deposito-monto-var" style="position:absolute; top:36px; left:381px; visibility:visible z-index:1">
 
-			<h1>Bienvenido</h1>
-
-			<br/> <br/>
-
-			<input type="image" src="img/consultar.png" id="consular"/>
-			<input type="image" src="img/depositar.png" id="depositar"/>
-
-			<br/>
-
-			<input type="image" src="img/retirar.png" id="retirar"/>
-			<input type="image" src="img/cambio de pin.png" id="cambio-de-pin"/>
+			<h1>¿Cuanto desea depositar?</h1>
 
 			<br/> <br/>
 
-			<img src="img/blanco.png">
+			<input type="text" id="cantidad"/>
+			
+			<br/> <br/> <br/> <br/> <br/> <br/>
+
+			<input type="image" src="img/entrar.png" id="entrar"/>
 			<input type="image" src="img/cancelar.png" id="cancelar"/>
 
+			
 		</div>
 </body>
 </html>
