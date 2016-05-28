@@ -12,9 +12,8 @@ using System.Xml.Linq;
 
 
 using System.Data.SqlClient;
-/// <summary>
-/// Descripción breve de Cliente
-/// </summary>
+
+
 public class Transaccion
 {
     public int codigo

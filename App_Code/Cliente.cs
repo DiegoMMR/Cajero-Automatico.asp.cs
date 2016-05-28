@@ -11,46 +11,16 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 
 using System.Data.SqlClient;
-/// <summary>
-/// Descripción breve de Cliente
-/// </summary>
+
+
 public class Cliente
 {
-    public int codigo
-    {
-        get;
-        set;
-    }
-
-    public string nombre
-    {
-        get;
-        set;
-    }
-
-    public string nit
-    {
-        get;
-        set;
-    }
-
-    public string direccion
-    {
-        get;
-        set;
-    }
-
-    public int telefono
-    {
-        get;
-        set;
-    }
-
-    public string correo
-    {
-        get;
-        set;
-    }
+    public int codigo { get; set;}
+    public string nombre { get; set;}
+    public string nit { get; set;}
+    public string direccion { get; set;}
+    public int telefono { get; set; }
+    public string correo { get; set;}
 
 	public Cliente()
 	{

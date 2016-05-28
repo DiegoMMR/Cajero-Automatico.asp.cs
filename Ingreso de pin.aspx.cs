@@ -14,6 +14,9 @@ public partial class _Default : Page
 
     protected void Entrar_Click(object sender, System.EventArgs e)
     {
+        int _pin = 2574;
+
+        
         Server.Transfer("Menu.aspx", true);
     }
 

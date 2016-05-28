@@ -20,13 +20,14 @@
 </head>
 
 	<body>
-        <form id="IngresoTarjeta" runat="server">
+        
 
 		<!--este es in div para el fondo -->
 		<div id="fondo">
 			<img src="img/fondo.jpg">
 		</div>
 
+        <form id="IngresoTarjeta" runat="server">
 
 		<!--en este div se le pone la posicion para que este quede sobre el fondo -->
 		<div id="inicio-de-secion" style="position:absolute; top:36px; left:381px; visibility:visible">

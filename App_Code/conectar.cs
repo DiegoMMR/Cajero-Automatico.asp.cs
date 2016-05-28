@@ -17,7 +17,7 @@ using System.Data.SqlClient;
     {
         public SqlConnection cn;
 
-        public Conectar()
+        public void conectar()
         {
             cn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConeccion"].ConnectionString);
         }
