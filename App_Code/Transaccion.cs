@@ -16,42 +16,11 @@ using System.Data.SqlClient;
 
 public class Transaccion
 {
-    public int codigo
-    {
-        get;
-        set;
-    }
-
-    public int NoTarjeta
-    {
-        get;
-        set;
-    }
-
-    public string tipo
-    {
-        get;
-        set;
-    }
-
-    public int monto
-    {
-        get;
-        set;
-    }
-
-    public string ubicacion
-    {
-        get;
-        set;
-    }
-
-    
-    public string fecha
-    {
-        get;
-        set;
-    }
+    public int codigo    {get; set;}
+    public int NoTarjeta {get; set;}
+    public string tipo {get; set;}
+    public int monto{get; set;}       
+    public string fecha{get; set;}
 
 
 
@@ -63,7 +32,6 @@ public class Transaccion
         NoTarjeta = 0;
         tipo = "";
         monto = 0;
-        ubicacion = "";
         fecha = hoy.ToString();
 	}
 }

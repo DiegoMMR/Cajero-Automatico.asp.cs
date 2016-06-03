@@ -70,10 +70,11 @@ public partial class Nuevo_Cliente : System.Web.UI.Page
 
         Abrir_cn();
 
-  
+        //ejecuta el codigo de sql para poder escibir datos dentro de la base de datos
         cmd = new SqlCommand(@"INSERT INTO Clientes (codcliente, nombre, nit, direccion, telefono, correo) values ('" + _Cliente.codigo +
             "','" + _Cliente.nombre + "','" + _Cliente.nit + "','" + _Cliente.direccion + "','" + _Cliente.telefono + "','" +_Cliente.correo + " ')", cn);
         cmd.CommandType = CommandType.Text;
+        //prueba escribir los datos y si da error no completa el proceso
         try
         {
             Abrir_cn();

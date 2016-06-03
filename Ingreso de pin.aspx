@@ -20,7 +20,7 @@
 </head>
 
 	<body>
-        <form id="IngresoTarjeta" runat="server">
+        <form id="IngresoPin" runat="server">
 
 		<!--este es in div para el fondo -->
 		<div id="fondo">
@@ -35,7 +35,11 @@
 
 			<br/> <br/>
 
-			<asp:TextBox ID="pin" runat=server textmode="Password" />
+			<asp:TextBox ID="pintext" runat=server textmode="Password" />
+
+            <br/>
+
+            <asp:Label ID="pinInvalido"  backcolor="Red" Text="" runat="server"></asp:Label>
 			
 			<br/> <br/> <br/> <br/> <br/> <br/>
 

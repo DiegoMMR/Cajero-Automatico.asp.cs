@@ -36,7 +36,11 @@
 
 			<br/> <br/>
 
-            <asp:TextBox ID="Retiro" runat=server />
+            <asp:TextBox ID="Deposito" runat=server />
+
+            <br/>
+
+            <asp:Label ID="MontoInvalido"  backcolor="Red" Text="" runat="server"></asp:Label>
 			
 			<br/> <br/> <br/> <br/> <br/> <br/>
 

@@ -48,6 +48,10 @@
             <asp:ImageButton id="Mil" runat="server" ImageUrl="img/1000.png"  onclick="Mil_Click"/>
 			<img src="img/blanco.png">
 
+            <br/>
+
+            <asp:Label ID="MontoInvalido"  backcolor="Red" Text="" runat="server"></asp:Label>
+
 			<br/> <br/>
 
             <asp:ImageButton id="MontoVariable" runat="server" ImageUrl="img/monto variable.png"  onclick="MontoVariable_Click"/>
