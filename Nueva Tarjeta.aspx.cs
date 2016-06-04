@@ -14,11 +14,9 @@ using System.Data.SqlClient;
 
 
 
-public partial class Nuevo_Cliente : System.Web.UI.Page
+public partial class Nueva_Tarjeta : System.Web.UI.Page
 {
-    
-    Guardar_cliente _Guardar = new Guardar_cliente();
-    Cliente _Cliente = new Cliente();
+    Tarjeta _Tarjeta = new Tarjeta();
 
     public SqlCommand cmd;
     public DataTable dt;
@@ -54,26 +52,39 @@ public partial class Nuevo_Cliente : System.Web.UI.Page
   
     protected void Page_Load(object sender, EventArgs e)
     {
+       
+    }
 
+    protected void Generar_Click(object sender, EventArgs e)
+    {
+        Random r = new Random(DateTime.Now.Millisecond);
+        Random r2 = new Random();
+
+        string aux1 = Convert.ToString(r.Next(10000, 99999));
+        string aux2 = Convert.ToString(r2.Next(10000, 99999));
+
+        string aleatorio = aux1 + aux2;
+
+        txtTarjeta.Text = aleatorio;
     }
 
     protected void cmdGuardar_Click(object sender, EventArgs e)
     {
-        _Cliente.codigo = Convert.ToInt32(txtCodigo.Text);
-        _Cliente.nombre = txtNombre.Text;
-        _Cliente.nit = txtNit.Text;
-        _Cliente.direccion = txtDireccion.Text;
-        _Cliente.telefono = int.Parse(txtTelefono.Text);
-        _Cliente.correo = txtCorreo.Text;
-
+        _Tarjeta.numero = txtTarjeta.Text;
+        _Tarjeta.CodCliente =Convert.ToInt32(txtCodCliente.Text);
+        _Tarjeta.estado = txtEstado.Text;
+        _Tarjeta.limite = Convert.ToInt32(txtLimite.Text);
+        _Tarjeta.pin = Convert.ToInt32(txtPin.Text);
+       
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["DBConeccion"].ConnectionString);
 
         Abrir_cn();
 
         //ejecuta el codigo de sql para poder escibir datos dentro de la base de datos
-        cmd = new SqlCommand(@"INSERT INTO Clientes (codcliente, nombre, nit, direccion, telefono, correo) values ('" + _Cliente.codigo +
-            "','" + _Cliente.nombre + "','" + _Cliente.nit + "','" + _Cliente.direccion + "','" + _Cliente.telefono + "','" +_Cliente.correo + " ')", cn);
+        cmd = new SqlCommand(String.Format(
+              "insert into tarjetas (notarjeta, codcliente, estado, limite, pin) values ('{0}','{1}','{2}','{3}','{4}');", _Tarjeta.numero, _Tarjeta.CodCliente, _Tarjeta.estado, _Tarjeta.limite, _Tarjeta.pin), cn);
         cmd.CommandType = CommandType.Text;
+
         //prueba escribir los datos y si da error no completa el proceso
         try
         {
@@ -88,19 +99,19 @@ public partial class Nuevo_Cliente : System.Web.UI.Page
 
         finally
         {
-            Cerrar_cn();
+            Cerrar_cn();            
             cmd.Dispose();
-            Response.Write("<script>alert('Cliente guardado exitosamente')</script>");
+            Response.Write("<script>alert('Tarjeta guardada exitosamente')</script>");
 
-           txtCodigo.Text = "";
-           txtNombre.Text = "";
-           txtNit.Text = "";
-           txtDireccion.Text = "";
-           txtTelefono.Text = "";
-           txtCorreo.Text = "";
+            txtCodCliente.Text = "";
+            txtEstado.Text = "";
+            txtLimite.Text = "";
+            txtPin.Text = "";
+            txtTarjeta.Text = "";
+
         }
 
-     
+    
 
     }
 }

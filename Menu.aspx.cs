@@ -48,7 +48,7 @@ public partial class _Default : Page
 
     protected void CambioDePin_Click(object sender, System.EventArgs e)
     {
-        Server.Transfer("", true);
+        Server.Transfer("Cambio de pin.aspx", true);
     }
 
     protected void Cancelar_Click(object sender, System.EventArgs e)

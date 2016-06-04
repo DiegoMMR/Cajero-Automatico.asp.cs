@@ -147,10 +147,10 @@ using System.Data.SqlClient;
             int conteo = Convert.ToInt32(Request.QueryString["conteo"]);
             conteo++;
 
-            if (conteo == 3)
+            if (conteo == 5)
             {
 
-                Response.Write("<script>alert('No puede hacer mas de 3 transacciones')</script>");
+                Response.Write("<script>alert('No puede hacer mas de 5 transacciones')</script>");
                 Server.Transfer("Ingreso de tarjeta.aspx", true);
             }
             else
