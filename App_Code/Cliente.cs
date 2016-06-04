@@ -17,7 +17,7 @@ public class Cliente
 {
     public int codigo { get; set;}
     public string nombre { get; set;}
-    public string nit { get; set;}
+    public int nit { get; set;}
     public string direccion { get; set;}
     public int telefono { get; set; }
     public string correo { get; set;}
@@ -26,7 +26,7 @@ public class Cliente
 	{
         codigo = 0;
         nombre = "";
-        nit = "";
+        nit = 0;
         direccion = "";
         telefono = 0;
         correo = "";

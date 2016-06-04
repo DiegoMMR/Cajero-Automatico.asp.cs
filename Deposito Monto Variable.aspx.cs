@@ -131,8 +131,9 @@ public partial class _Default : Page
         cmd.Dispose();
 
         int conteo = Convert.ToInt32(Request.QueryString["conteo"]);
+        string codcliente = Request.QueryString["codCliente"];
 
-        Response.Redirect("Transaccion exitosa.aspx?numero=" + numero + "&conteo=" + conteo);
+        Response.Redirect("Transaccion exitosa.aspx?numero=" + numero + "&conteo=" + conteo + "&codCliente=" + codcliente);
         Server.Transfer("Transaccion exitosa.aspx", true);
 
     }
@@ -157,8 +158,9 @@ public partial class _Default : Page
     {
         string numero = Request.QueryString["numero"];
         int conteo = Convert.ToInt32(Request.QueryString["conteo"]);
+        string codcliente = Request.QueryString["codCliente"];
 
-        Response.Redirect("Deposito.aspx?numero=" + numero + "&conteo=" + conteo);
+        Response.Redirect("Deposito.aspx?numero=" + numero + "&conteo=" + conteo + "&codCliente=" + codcliente);
         Server.Transfer("Deposito.aspx", true);
     }
     

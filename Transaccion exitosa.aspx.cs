@@ -20,6 +20,8 @@ public partial class Transaccion_exitosa : System.Web.UI.Page
     {
         string numero = Request.QueryString["numero"];
         int conteo = Convert.ToInt32(Request.QueryString["conteo"]);
+        string codcliente = Request.QueryString["codCliente"];
+
         conteo++;
 
         if (conteo == 5)
@@ -29,7 +31,7 @@ public partial class Transaccion_exitosa : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("Menu.aspx?numero=" + numero + "&conteo=" + conteo);
+            Response.Redirect("Menu.aspx?numero=" + numero + "&conteo=" + conteo + "&codCliente=" + codcliente);
             Server.Transfer("Menu.aspx", true);
         }
     }

@@ -34,7 +34,7 @@
 		<div id="menu" style="position:absolute; top:36px; left:381px; visibility:visible">
 
 			<h1>Bienvenido</h1>
-
+            <asp:Label ID="txtNombre"  Text="" runat="server"></asp:Label>
 			<br/> <br/>
 
             <asp:ImageButton id="Consultar" runat="server" ImageUrl="img/consultar.png"  onclick="Consultar_Click"/>

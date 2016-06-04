@@ -63,42 +63,6 @@ public partial class _Default : Page
             throw (e);
         }
     }
-
-
-    public void leerDatos(string numero)
-    {
-        Tarjeta _Tarjeta = new Tarjeta();
-        Conectar();
-
-        Abrir_cn();
-
-        //escribe el codigo para poder biscar los datos de la tarjeta
-        cmd = new SqlCommand(String.Format(
-              "SELECT notarjeta, codcliente, estado, limite, pin FROM tarjetas  where notarjeta ='{0}'", numero), cn);
-
-        //ejecuta un lector de datos
-        SqlDataReader _reader = cmd.ExecuteReader();
-
-
-
-        //ingresa lo leido en variables internas
-        while (_reader.Read())
-        {
-
-
-            _Tarjeta.numero = _reader.GetString(0);
-            _Tarjeta.CodCliente = _reader.GetInt32(1);
-            _Tarjeta.estado = _reader.GetString(2);
-            _Tarjeta.limite = _reader.GetInt32(3);
-            _Tarjeta.pin = _reader.GetInt32(4);
-
-        }
-
-
-
-        Cerrar_cn();
-    }
-
     
 
     protected void Entrar_Click(object sender, System.EventArgs e)
@@ -144,13 +108,14 @@ public partial class _Default : Page
 
         Response.Write("=" + _Tarjeta.numero + ", " + _Tarjeta.CodCliente + ", " + _Tarjeta.estado + ", " + _Tarjeta.limite + ", " + _Tarjeta.pin + ", " + pin + ", " + numero);
 
+        int codigocliente = _Tarjeta.CodCliente;
 
         //analiza el pin ingresado con el pin real de la tarjeta
         if (pin == _Tarjeta.pin)
          {
              int conteo = 0;
 
-             Response.Redirect("Menu.aspx?numero=" + numero + "&conteo=" + conteo);             
+             Response.Redirect("Menu.aspx?numero=" + numero + "&conteo=" + conteo + "&codCliente=" + codigocliente);             
              Server.Transfer("Menu.aspx", true);
          }
          else

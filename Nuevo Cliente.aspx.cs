@@ -61,7 +61,7 @@ public partial class Nuevo_Cliente : System.Web.UI.Page
     {
         _Cliente.codigo = Convert.ToInt32(txtCodigo.Text);
         _Cliente.nombre = txtNombre.Text;
-        _Cliente.nit = txtNit.Text;
+        _Cliente.nit = Convert.ToInt32(txtNit.Text);
         _Cliente.direccion = txtDireccion.Text;
         _Cliente.telefono = int.Parse(txtTelefono.Text);
         _Cliente.correo = txtCorreo.Text;
